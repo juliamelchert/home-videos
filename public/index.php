@@ -1,4 +1,4 @@
-<?php require_once("../components/header.php"); ?>
+<?php require_once("/html/components/header.php"); ?>
 
 	<div class="page-title">
 		<h1>Recently Uploaded</h1>
@@ -11,9 +11,9 @@
 
 			for ($i = 0; $i < $numOfVideos; $i++) {
 				echo "<p>{$videoTitles[$i]}</p>";
-				include("../components/video.php");
+				include("/html/components/video.php");
 			}
 		?>
 	</div>
 
-<?php require_once("../components/footer.php"); ?>
+<?php require_once("/html/components/footer.php"); ?>
