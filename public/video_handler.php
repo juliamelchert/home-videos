@@ -1,6 +1,6 @@
 <?php
 
-    header("Location: html/pages/upload.php");
+    header("Location: /upload.php");
     exit();
 
 ?>
