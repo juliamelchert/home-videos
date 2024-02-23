@@ -1,7 +1,7 @@
 <html>
 
     <title>Home Videos</title>
-    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="../../static/favicon.ico">
     <link rel="stylesheet" href="/static/styles.css">
 
     <head>
