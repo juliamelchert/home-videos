@@ -1,4 +1,4 @@
-<?php require_once("../components/header.php"); ?>
+<?php require_once("./html/components/header.php"); ?>
 
 	<div class="page-title">
 		<h1>Upload a Video</h1>
@@ -38,4 +38,4 @@
       <input type="submit" value="Submit">
    </form>
 
-<?php require_once("../components/footer.php"); ?>
+<?php require_once("./html/components/footer.php"); ?>

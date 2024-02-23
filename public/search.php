@@ -1,4 +1,4 @@
-<?php require_once("../components/header.php"); ?>
+<?php require_once("./html/components/header.php"); ?>
 
     <div class="page-title">
 		<h1>Search</h1>
@@ -9,4 +9,4 @@
         <img id="search-icon" src="../../static/search-icon.png">
     </div>
 
-<?php require_once("../components/footer.php"); ?>
+<?php require_once("./html/components/footer.php"); ?>

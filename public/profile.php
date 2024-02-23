@@ -1,4 +1,4 @@
-<?php require_once("../components/header.php"); ?>
+<?php require_once("./html/components/header.php"); ?>
 
     <div class="page-title">
 		<h1>Profile Information</h1>
@@ -8,4 +8,4 @@
     <p>Email: nevertoomanykats@gmail.com</p>
     
 
-<?php require_once("../components/footer.php"); ?>
+<?php require_once("./html/components/footer.php"); ?>
