@@ -1,11 +1,16 @@
-<?php require_once("./html/components/header.php"); ?>
+<?php require_once("./components/header.php"); ?>
 
     <div class="page-title">
 		<h1>Profile Information</h1>
 	</div>
 
-    <p>Username: krazykatlady246</p>
-    <p>Email: nevertoomanykats@gmail.com</p>
-    
+    <div class="user-info">
+        <p>Username: krazykatlady246</p>
+        <p>Email: nevertoomanykats@gmail.com</p>
+    </div>
 
-<?php require_once("./html/components/footer.php"); ?>
+    <div class="logout">
+        <a class="link" href="login.php"><button type="button">Logout</button></a>
+    </div>
+
+<?php require_once("./components/footer.php"); ?>
