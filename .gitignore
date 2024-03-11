@@ -1,3 +1,5 @@
 /vendor/
 Procfile
 composer.json
+juliamelchert.sql
+search_log.txt
