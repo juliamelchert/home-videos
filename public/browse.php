@@ -12,12 +12,12 @@
 				$url = $video['url'];
 				echo "<div class='video-component'>
 						<div class='video-header'>
-							<span>{$title}</span>";
+							<span>" . htmlspecialchars($title) . "</span>";
 				if (isset($_SESSION['admin']) and $_SESSION['admin'] == 1) {
-					echo "<button id='btn-delete'><a href='./handlers/delete_video.php?title={$title}'>X</a></button>";
+					echo "<button id='btn-delete'><a href='./handlers/delete_video.php?title=" . htmlspecialchars($title) . "'>X</a></button>";
 				}
 				echo "</div>";
-				echo "<a href={$url}><img class='thumbnail' src='http://img.youtube.com/vi/{$video_id}/hqdefault.jpg' title='{$title}' alt='YouTube Thumbnail' /></a></div>";
+				echo "<a href=" . htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a></div>";
 			}
 		?>
 	</div>

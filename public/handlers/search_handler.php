@@ -11,6 +11,7 @@
     $errors = [];
     $dao = new Dao();
 
+    // TODO: Implement search functionality
     
 
     header("Location: ../search.php");

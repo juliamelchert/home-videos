@@ -105,12 +105,14 @@
         $_SESSION['errors'] = $errors;
         $logger->LogWarn("video_handler: errors were present, passing the following errors to the session: " . print_r($_SESSION['errors'], 1));
         $_SESSION['inputs'] = $_POST;
+        $logger->LogInfo("video_handler: errors were present, passing the following vals as inputs: " . print_r($_SESSION['inputs'], 1));
         header("Location: ../upload.php");
         exit();
     }
 
     // Add data to database with DAO
     $dao->createVideo($title, $url, $date, $tags);
+    $_SESSION['inputs'] = [];
 
     // Display success message
 
