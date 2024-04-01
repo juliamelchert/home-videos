@@ -5,12 +5,11 @@
 	</div>
 
     <div class="user-info">
-        <p>Username: krazykatlady246</p>
-        <p>Email: nevertoomanykats@gmail.com</p>
+        <p>Username: <?php echo $_SESSION['username']; ?></p>
     </div>
 
     <div class="logout">
-        <a class="link" href="login.php"><button type="button">Logout</button></a>
+        <a class="link" href="./handlers/logout_handler.php"><button type="button">Logout</button></a>
     </div>
 
 <?php require_once("./components/footer.php"); ?>

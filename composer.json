@@ -11,7 +11,9 @@
             "email": "melcherj@oregonstate.edu"
         }
     ],
-    "require": {},
+    "require": {
+        "katzgrau/klogger": "dev-master"
+    },
     "require-dev": {
         "heroku/heroku-buildpack-php": "*"
       }

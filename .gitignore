@@ -2,4 +2,9 @@
 Procfile
 composer.json
 juliamelchert.sql
+queries.sql
 search_log.txt
+.env
+KLogger.php
+log.txt
+helpful_commands.txt

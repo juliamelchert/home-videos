@@ -13,7 +13,23 @@
     <body>
         <div id="main-content">
 
-            <form method="post" action="./handlers/login_handler.php">
+            <div class="error-container">
+                <?php
+                    session_start();
+                    if (isset($_SESSION['errors'])) {
+                        foreach ($_SESSION['errors'] as $error) {
+                            echo "<div class='error'>{$error}</div>";
+                        }
+                        unset($_SESSION['errors']);
+                    }
+                ?>
+            </div>
+
+            <div class="page-title">
+                <h1>Login</h1>
+            </div>
+
+            <form id="login-form" method="post" action="./handlers/login_handler.php">
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>

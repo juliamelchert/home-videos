@@ -5,7 +5,13 @@
     <link rel="stylesheet" href="./static/styles.css">
 
     <head>
-        <?php require_once("nav.php"); ?>
+        <?php
+            require_once("nav.php");
+            if (!isset($_SESSION['authenticated']) or !$_SESSION['authenticated']) {
+                header("Location: ./login.php");
+                exit();
+            }
+        ?>
     </head>
 
     <body>

@@ -6,12 +6,12 @@
 
 	<div class=video-container>
 		<?php
-			$numOfVideos = 3;
-			$videoTitles = array("Gymnastics Meet", "Skit Night", "Swimming");
-
-			for ($i = 0; $i < $numOfVideos; $i++) {
-				echo "<p>{$videoTitles[$i]}</p>";
-				include("./components/video.php");
+			foreach ($_SESSION['recent-videos'] as $video) {
+				$video_id = $video['video_id'];
+				$title = $video['title'];
+				$url = $video['url'];
+				echo "<div class='video-component'><p>{$title}</p>";
+				echo "<a href={$url}><img class='thumbnail' src='http://img.youtube.com/vi/{$video_id}/hqdefault.jpg' title='{$title}' alt='YouTube Thumbnail' /></a></div>";
 			}
 		?>
 	</div>
