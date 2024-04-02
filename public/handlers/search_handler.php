@@ -14,6 +14,16 @@
     // Get all videos for given search query
     $allVideos = $dao->searchForStr($search);
 
+    // Remove any duplicates
+    $videoTitles = [];
+    foreach ($allVideos as $video) {
+        if (in_array($video['title'], $videoTitles)) {
+            unset($allVideos[$video]);
+        } else {
+            $videoTitles[] = $video['title'];
+        }
+    }
+
     $_SESSION['search-videos'] = [];
 
     foreach ($allVideos as $video) {
