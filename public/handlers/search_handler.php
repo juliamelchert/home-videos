@@ -4,8 +4,8 @@
     $logger = new KLogger ("../../log.txt", KLogger::DEBUG);
     session_start();
 
-    // Gather data from POST
-    $search = $_POST['search'];
+    // Gather data from GET
+    $search = $_GET['search'];
 
     // Validate data and collect any error messages
     $errors = [];
