@@ -184,7 +184,10 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     column-gap: 20px;
-    width: 300px;
+}
+
+.video-component-col > a, .video-component-col > a > .thumbnail {
+    width: 30%;
 }
 
 #login-form {
