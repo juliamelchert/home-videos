@@ -13,8 +13,8 @@
 
     <div class=video-container>
 		<?php
-            if (isset($_SESSION['recent-videos'])) {
-                foreach ($_SESSION['recent-videos'] as $video) {
+            if (isset($_SESSION['search-videos'])) {
+                foreach ($_SESSION['search-videos'] as $video) {
                     $video_id = $video['video_id'];
                     $title = $video['title'];
                     $url = $video['url'];
