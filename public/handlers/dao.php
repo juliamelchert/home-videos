@@ -137,10 +137,9 @@
                                      FROM Videos v
                                      JOIN Videos_Tags vt ON v.video_id = vt.video_id
                                      JOIN Tags t ON vt.tag_id = t.tag_id
-                                     WHERE v.title LIKE '%' || ? || '%'
-                                        OR v.youtube_link LIKE '%' || ? || '%'
-                                        OR t.name LIKE '%' || ? || '%';
-                                    ");
+                                     WHERE LOWER(v.title) LIKE '%' || LOWER(?) || '%'
+                                        OR LOWER(v.youtube_link) LIKE '%' || LOWER(?) || '%'
+                                        OR LOWER(t.name) LIKE '%' || LOWER(?) || '%';");
             $query->execute([$str, $str, $str]);
 
             $result = $query->fetchAll();
