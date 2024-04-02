@@ -133,7 +133,7 @@
         public function searchForStr($str) {
             $conn = $this->getConnection();
 
-            $query = $conn->prepare("SELECT v.title, v.youtube_link, COALESCE(t.name, 'No Tag') AS tag_name
+            $query = $conn->prepare("SELECT DISTINCT v.title, v.youtube_link, COALESCE(t.name, 'No Tag') AS tag_name
                                      FROM Videos v
                                      LEFT JOIN Videos_Tags vt ON v.video_id = vt.video_id
                                      LEFT JOIN Tags t ON vt.tag_id = t.tag_id
