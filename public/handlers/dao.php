@@ -26,8 +26,21 @@
         */
 
         public function getConnection () {
-            //$this->logger->LogInfo("Getting a connection...");
-            return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+            // Copied from Heroku documentation: https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-with-pdo
+            $db = parse_url(getenv("DATABASE_URL"));
+
+            $pdo = new PDO("pgsql:" . sprintf(
+                "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+                $db["host"],
+                $db["port"],
+                $db["user"],
+                $db["pass"],
+                ltrim($db["path"], "/")
+            ));
+            return $pdo;
+
+            // For local use:
+            // new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
         }
 
         public function checkTitleIsUnique($title) {
