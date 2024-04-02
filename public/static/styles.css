@@ -171,6 +171,20 @@ body {
     margin: 0;
 }
 
+.video-container-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.video-component-col {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 #login-form {
     text-align: center;
 }

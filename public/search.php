@@ -11,15 +11,17 @@
         </div>
     </form>
 
-    <div class=video-container>
+    <div class=video-container-col>
 		<?php
             if (isset($_SESSION['search-videos'])) {
                 foreach ($_SESSION['search-videos'] as $video) {
                     $video_id = $video['video_id'];
                     $title = $video['title'];
                     $url = $video['url'];
-                    echo "<div class='video-component'><p>" . htmlspecialchars($title) . "</p>";
-                    echo "<a href=" . htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a></div>";
+                    echo "<div class='video-component-col'>";
+                    echo "<a href=" . htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a>";
+                    echo "<p>" . htmlspecialchars($title) . "</p>";
+                    echo "</div>";
                 }
             }
 		?>
