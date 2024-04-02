@@ -141,7 +141,7 @@
                                         OR v.youtube_link LIKE '%' || ? || '%'
                                         OR t.name LIKE '%' || ? || '%';
                                     ");
-            $query->execute($str, $str, $str);
+            $query->execute([$str, $str, $str]);
 
             $result = $query->fetchAll();
             return $result;
