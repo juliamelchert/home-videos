@@ -183,6 +183,8 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    column-gap: 20px;
+    width: 300px;
 }
 
 #login-form {
