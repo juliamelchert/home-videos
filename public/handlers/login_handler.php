@@ -5,8 +5,8 @@
     session_start();
 
     // Gather data from POST
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     // Validate data and collect any error messages
     $errors = [];
@@ -42,7 +42,7 @@
         $logger->LogWarn("login_handler: errors were present, passing the following errors to the session: " . print_r($_SESSION['errors'], 1));
         $_SESSION['inputs'] = $_POST;
 
-        header("Location: ./login_handler.php");
+        header("Location: ../login.php");
         exit();
     }
 ?>
