@@ -134,12 +134,17 @@
             $conn = $this->getConnection();
 
             $query = $conn->prepare("SELECT DISTINCT v.title, v.youtube_link, COALESCE(t.name, 'No Tag') AS tag_name
-                                     FROM Videos v
-                                     LEFT JOIN Videos_Tags vt ON v.video_id = vt.video_id
-                                     LEFT JOIN Tags t ON vt.tag_id = t.tag_id
-                                     WHERE LOWER(v.title) LIKE '%' || LOWER(?) || '%'
-                                        OR LOWER(v.youtube_link) LIKE '%' || LOWER(?) || '%'
-                                        OR LOWER(t.name) LIKE '%' || LOWER(?) || '%';");
+            FROM Videos v
+            LEFT JOIN Videos_Tags vt ON v.video_id = vt.video_id
+            LEFT JOIN Tags t ON vt.tag_id = t.tag_id
+            WHERE LOWER(v.title) LIKE '%' || LOWER(?) || '%'
+               OR LOWER(v.youtube_link) LIKE '%' || LOWER(?) || '%'
+            UNION
+            SELECT DISTINCT v.title, v.youtube_link, COALESCE(t.name, 'No Tag') AS tag_name
+            FROM Videos v
+            LEFT JOIN Videos_Tags vt ON v.video_id = vt.video_id
+            LEFT JOIN Tags t ON vt.tag_id = t.tag_id
+            WHERE LOWER(t.name) LIKE '%' || LOWER(?) || '%';");
             $query->execute([$str, $str, $str]);
 
             $result = $query->fetchAll();
