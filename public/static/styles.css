@@ -186,7 +186,7 @@ body {
     column-gap: 20px;
 }
 
-.video-component-col > a, .video-component-col > a > .thumbnail {
+.video-component-col > a {
     width: 30%;
 }
 
