@@ -129,7 +129,23 @@
             $result = $query->fetchAll();
             return $result;
         }
-    
+
+        public function searchForStr($str) {
+            $conn = $this->getConnection();
+
+            $query = $conn->prepare("SELECT v.title, v.youtube_link, t.name
+                                     FROM Videos v
+                                     JOIN Videos_Tags vt ON v.video_id = vt.video_id
+                                     JOIN Tags t ON vt.tag_id = t.tag_id
+                                     WHERE v.title LIKE '%' || ? || '%'
+                                        OR v.youtube_link LIKE '%' || ? || '%'
+                                        OR t.name LIKE '%' || ? || '%';
+                                    ");
+            $query->execute($str);
+
+            $result = $query->fetchAll();
+            return $result;
+        }
 
         /*
          * CREATE
