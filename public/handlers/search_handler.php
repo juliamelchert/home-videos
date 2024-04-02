@@ -16,12 +16,14 @@
 
     // Remove any duplicates
     $videoTitles = [];
+    $i = 0;
     foreach ($allVideos as $video) {
         if (in_array($video['title'], $videoTitles)) {
-            unset($allVideos[$video]);
+            unset($allVideos[$i]);
         } else {
             $videoTitles[] = $video['title'];
         }
+        $i++;
     }
 
     $_SESSION['search-videos'] = [];
