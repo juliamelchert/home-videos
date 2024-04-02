@@ -5,7 +5,7 @@
 	</div>
 
     <div class="user-info">
-        <p>Username: <?php echo $_SESSION['username']; ?></p>
+        <p>Username: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </div>
 
     <div class="logout">

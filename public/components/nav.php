@@ -13,7 +13,7 @@
             <li id="profile-li">
                 <a class="link" id="profile-link" href="profile.php">
                     <img id="profile-pic" src="./static/blank-pfp.png">
-                    <span id="nav-username"><?php echo $_SESSION['username'];?></span>
+                    <span id="nav-username"><?php echo htmlspecialchars($_SESSION['username']);?></span>
                 </a>
             </li>
         </ol>

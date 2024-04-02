@@ -18,22 +18,21 @@
         <form method="post" action="./handlers/video_handler.php">
             <div>
                 <label for="title">Title<span class="required">*</span></label>
-                <input required type="text" id="title" name="title" value="<?php echo isset($_SESSION['inputs']['title']) ? $_SESSION['inputs']['title'] : ""; ?>">
+                <input required type="text" id="title" name="title" value="<?php echo isset($_SESSION['inputs']['title']) ? htmlspecialchars($_SESSION['inputs']['title']) : ""; ?>">
             </div>
             <div>
                 <label for="url">YouTube URL<span class="required">*</span></label>
-                <input required type="text" id="url" name="url" value="<?php echo isset($_SESSION['inputs']['url']) ? $_SESSION['inputs']['url'] : ""; ?>">
+                <input required type="text" id="url" name="url" value="<?php echo isset($_SESSION['inputs']['url']) ? htmlspecialchars($_SESSION['inputs']['url']) : ""; ?>">
             </div>
 
             <div>
                 <label for="date">Date<span class="required">*</span></label>
-                <input required type="date" id="date" name="date" value="<?php echo isset($_SESSION['inputs']['date']) ? $_SESSION['inputs']['date'] : ""; ?>">
+                <input required type="date" id="date" name="date" value="<?php echo isset($_SESSION['inputs']['date']) ? htmlspecialchars($_SESSION['inputs']['date']) : ""; ?>">
             </div>
 
             <div id="tags-label">Tags:</div>
             <div class="form-tags">
                 <?php
-                    /* TODO: Change below array to grab tags from db instead */
                     $tags = array("Jonah", "Sami", "Julia", "Football", "Theater", "Gymnastics");
 
                     for ($i = 0; $i < count($tags); $i++) {

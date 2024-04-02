@@ -32,11 +32,11 @@
             <form id="login-form" method="post" action="./handlers/login_handler.php">
                 <div>
                     <label for="username">Username:</label>
-                    <input required type="text" id="username" name="username" value="<?php echo isset($_SESSION['inputs']['username']) ? $_SESSION['inputs']['username'] : ""; ?>">
+                    <input required type="text" id="username" name="username" value="<?php echo isset($_SESSION['inputs']['username']) ? htmlspecialchars($_SESSION['inputs']['username']) : ""; ?>">
                 </div>
                 <div>
                     <label for="password">Password:</label>
-                    <input required type="password" id="password" name="password" value="<?php echo isset($_SESSION['inputs']['password']) ? $_SESSION['inputs']['password'] : ""; ?>">
+                    <input required type="password" id="password" name="password" value="<?php echo isset($_SESSION['inputs']['password']) ? htmlspecialchars($_SESSION['inputs']['password']) : ""; ?>">
                 </div>
                 <input type="submit" value="Login">
             </form>
