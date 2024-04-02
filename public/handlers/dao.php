@@ -12,11 +12,12 @@
         public function __construct () {
             $this->logger = new KLogger("../../log.txt", KLogger::DEBUG);
 
-            $env = parse_ini_file('../../.env');
-            $this->host = $env["DB_HOST"];
-            $this->db = $env["DB_NAME"];
-            $this->user = $env["DB_USER"];
-            $this->pass = $env["DB_PASS"];
+            // For local setup:
+            // $env = parse_ini_file('../../.env');
+            // $this->host = $env["DB_HOST"];
+            // $this->db = $env["DB_NAME"];
+            // $this->user = $env["DB_USER"];
+            // $this->pass = $env["DB_PASS"];
 
             date_default_timezone_set('America/Boise');
         }

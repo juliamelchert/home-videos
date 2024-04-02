@@ -14,7 +14,7 @@
 						<div class='video-header'>
 							<span>" . htmlspecialchars($title) . "</span>";
 				if (isset($_SESSION['admin']) and $_SESSION['admin'] == 1) {
-					echo "<button id='btn-delete'><a href='./handlers/delete_video.php?title=" . htmlspecialchars($title) . "'>X</a></button>";
+					echo "<a href='./handlers/delete_video.php?title=" . htmlspecialchars($title) . "'><button id='btn-delete'>X</button></a>";
 				}
 				echo "</div>";
 				echo "<a href=" . htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a></div>";
