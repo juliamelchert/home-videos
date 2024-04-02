@@ -29,7 +29,7 @@
                 <h1>Login</h1>
             </div>
 
-            <form id="login-form" method="post" action="./handlers/login_handler.php">
+            <form id="login-form" method="get" action="./handlers/login_handler.php">
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>

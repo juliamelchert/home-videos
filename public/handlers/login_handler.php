@@ -5,8 +5,8 @@
     session_start();
 
     // Gather data from POST
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_GET['username'];
+    $password = $_GET['password'];
 
     // Validate data and collect any error messages
     $errors = [];
