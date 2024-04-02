@@ -16,11 +16,12 @@
 
     // Remove any duplicates
     $videoTitles = [];
-    for ($i = 0; $i < count($allVideos); $i++) {
-        if (in_array($allVideos[$i]['title'], $videoTitles)) {
+    $i = 0;
+    foreach ($allVideos as $video) {
+        if (in_array($video['title'], $videoTitles)) {
             unset($allVideos[$i]);
         } else {
-            $videoTitles[] = $allVideos[$i]['title'];
+            $videoTitles[] = $video['title'];
         }
         $i++;
     }
