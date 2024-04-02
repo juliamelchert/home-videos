@@ -197,3 +197,11 @@ body {
 #password {
     margin-bottom: 15px;
 }
+
+input:placeholder-shown {
+    font-style: italic;
+ }
+
+ .btn-delete {
+    cursor: pointer;
+ }
