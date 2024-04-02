@@ -33,7 +33,9 @@
         }
 
         $_SESSION['search-videos'][] = array("title"=>$title, "video_id"=>$video_id, "url"=>$url);
-    }  
+    }
+
+    $_SESSION['inputs']['search'] = $search;
 
     header("Location: ../search.php");
     exit();
