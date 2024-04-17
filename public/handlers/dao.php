@@ -41,7 +41,7 @@
             return $pdo;
 
             // For local use:
-            // new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+            // return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
         }
 
         public function checkTitleIsUnique($title) {
@@ -83,10 +83,13 @@
         }
 
         public function checkLogin($username, $password) {
+            $salt = "juliaiscool12039mfcjnq02m9eurce0fmqs9j2198fvn1vu30m9xs34";
+            $hashedPass = hash('sha256', $password . $salt);
+
             $conn = $this->getConnection();
 
             $query = $conn->prepare("SELECT * FROM Users WHERE username = ? and password = ?");
-            $query->execute([$username, $password]);
+            $query->execute([$username, $hashedPass]);
 
             $result = $query->fetchAll();
             if (count($result) == 0) {
