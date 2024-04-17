@@ -6,6 +6,7 @@
 
     <form method="get" action="./handlers/search_handler.php">
         <div class="search-area">
+            <label for="search"></label>
             <input id="search-bar" type="text" name="search" placeholder="Search for videos by title or tags..." value="<?php echo isset($_SESSION['inputs']['search']) ? htmlspecialchars($_SESSION['inputs']['search']) : ""; ?>">
             <button type="submit" id="btn-search"><img id="search-icon" src="./static/search-icon.png"></button>
         </div>

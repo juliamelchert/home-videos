@@ -42,7 +42,7 @@
         $errors[] = "Please enter a shorter URL for the video (consider using a URL shortener).";
     }
 
-    if (preg_match('/www.youtube.com\//', $url) == 0 and preg_match('/youtu.be\//', $url) == 0) {
+    if (preg_match('/youtube.com\//', $url) == 0 and preg_match('/youtu.be\//', $url) == 0) {
         $logger->LogWarn("video_handler: data validation - not a YouTube URL");
         $errors[] = "Please enter a YouTube URL.";
     }
@@ -116,7 +116,10 @@
 
     // Display success message
 
+    unset($_SESSION['errors']);
+
+    $_SESSION['current-page'] = "upload";
+    $_SESSION['upload-success'] = true;
     header("Location: ../upload.php");
     exit();
-
 ?>

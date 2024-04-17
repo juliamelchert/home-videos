@@ -29,6 +29,7 @@
 
         // Check if admin now that we know username/password is valid
         $_SESSION['admin'] = $dao->checkAdmin($username);
+        unset($_SESSION['errors']);
 
         header("Location: ./index_handler.php");
         exit();

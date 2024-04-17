@@ -4,15 +4,20 @@
 		<h1>Upload a Video</h1>
 	</div>
 
-    <div class="error-container">
+    <div class="error-container <?php echo (isset($_SESSION['errors'])) ? '' : 'hidden' ?>">
         <?php
             if (isset($_SESSION['errors'])) {
                 foreach ($_SESSION['errors'] as $error) {
                     echo "<div class='error'>{$error}</div>";
                 }
-                unset($_SESSION['errors']);
             }
         ?>
+    </div>
+
+    <div class="success-container <?php echo (isset($_SESSION['upload-success']) and $_SESSION['upload-success']) ? 'visible' : 'hidden' ?>">
+        <div class="success">Success!</div>
+        <script src="./jquery/success.js"></script>
+        <?php unset($_SESSION['upload-success']); ?>
     </div>
 
         <form method="post" action="./handlers/video_handler.php">
@@ -52,9 +57,10 @@
             <input type="submit" value="Submit">
      </form>
 
-    <!-- TODO: Change to a hovering tool tip later -->
     <div>
         <span class="required">*</span> = required field
     </div>
+
+    <?php $_SESSION['current-page'] = "upload" ?>
 
 <?php require_once("./components/footer.php"); ?>

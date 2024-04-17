@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./static/styles.css">
 
     <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <?php
             require_once("nav.php");
             if (!isset($_SESSION['authenticated']) or !$_SESSION['authenticated']) {

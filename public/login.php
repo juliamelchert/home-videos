@@ -7,26 +7,27 @@
     <head>
         <!-- Empty navbar because the user is not logged in, but we want the formatting to remain the same -->
         <div id="navbar">
+            <ol>
+                <li id="easter-egg">Easter egg! :)</li>
+            </ol>
         </div>
     </head>
 
     <body>
         <div id="main-content">
 
-            <div class="error-container">
+            <div class="page-title">
+                <h1>Login</h1>
+            </div>
+
+            <div class="error-container <?php session_start(); echo (isset($_SESSION['errors'])) ? '' : 'hidden' ?>">
                 <?php
-                    session_start();
                     if (isset($_SESSION['errors'])) {
                         foreach ($_SESSION['errors'] as $error) {
                             echo "<div class='error'>{$error}</div>";
                         }
-                        unset($_SESSION['errors']);
                     }
                 ?>
-            </div>
-
-            <div class="page-title">
-                <h1>Login</h1>
             </div>
 
             <form id="login-form" method="post" action="./handlers/login_handler.php">
@@ -36,7 +37,7 @@
                 </div>
                 <div>
                     <label for="password">Password:</label>
-                    <input required type="password" id="password" name="password" value="<?php echo isset($_SESSION['inputs']['password']) ? htmlspecialchars($_SESSION['inputs']['password']) : ""; ?>">
+                    <input required type="password" id="password" name="password">
                 </div>
                 <input type="submit" value="Login">
             </form>

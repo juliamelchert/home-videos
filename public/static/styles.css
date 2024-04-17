@@ -21,14 +21,23 @@ a {
     text-decoration: none;
 }
 
-#navbar {
+#navbar, #login-navbar {
     background-color: #3e2557;
     color: white;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+}
+
+#easter-egg {
+    visibility: hidden;
+    padding: 6px;
 }
 
 #navbar a {
     color: white;
+}
+
+#navbar .current-page a {
+    color: #e5ccfe;
 }
 
 #navbar a:hover {
@@ -62,6 +71,7 @@ a {
 }
 
 #footer {
+    font-size: small;
     padding: 0px 50px 25px 50px;
     margin-top: auto;
 }
@@ -132,14 +142,30 @@ body {
 
 .error {
     padding: 10px;
-    background-color: #f44336; /* Red */
-    border: 2px solid #cb372d;
     color: white;
-    margin-bottom: 5px;
+    text-align: center;
+}
+
+.error-container, .success-container {
+    margin-bottom: 10px;
+    width: 50%;
+    margin: auto;
 }
 
 .error-container {
-    padding-bottom: 10px;
+    background-color: #f44336; /* Red */
+    border: 2px solid #cb372d;
+}
+
+.success-container {
+    background-color: #36f44f; /* Green */
+    border: 2px solid #34a925;
+    color: #1a5512;
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .video-container-grid {
@@ -192,6 +218,7 @@ body {
 
 #login-form {
     text-align: center;
+    padding: 10px 0;
 }
 
 #password {
