@@ -4,7 +4,9 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #f5f2f9;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 #main-content {

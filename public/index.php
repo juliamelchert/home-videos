@@ -6,14 +6,16 @@
 
 	<div class=video-container>
 		<?php
-			foreach ($_SESSION['recent-videos'] as $video) {
-				$video_id = $video['video_id'];
-				$title = $video['title'];
-				$url = $video['url'];
-				echo "<div class='video-component'><p>" . htmlspecialchars($title) . "</p>";
-				echo "<a href=";
-				echo (substr($url, 0, 8) == "https://") ? "" : "https://";
-				echo htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a></div>";
+			if (isset($_SESSION['recent-videos'])) {
+				foreach ($_SESSION['recent-videos'] as $video) {
+					$video_id = $video['video_id'];
+					$title = $video['title'];
+					$url = $video['url'];
+					echo "<div class='video-component'><p>" . htmlspecialchars($title) . "</p>";
+					echo "<a href=";
+					echo (substr($url, 0, 8) == "https://") ? "" : "https://";
+					echo htmlspecialchars($url) . "><img class='thumbnail' src='http://img.youtube.com/vi/" . htmlspecialchars($video_id) . "/hqdefault.jpg' title='" . htmlspecialchars($title) . "' alt='YouTube Thumbnail' /></a></div>";
+				}
 			}
 		?>
 	</div>
