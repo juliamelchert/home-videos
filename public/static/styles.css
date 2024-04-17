@@ -4,9 +4,9 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #f5f2f9;
-    font-family: joly-display, sans-serif;
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
     font-style: normal;
-    font-weight: 400;
 }
 
 #main-content {
